@@ -1,0 +1,45 @@
+.center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.input_group{
+    position: relative;
+    border: 2px solid black;
+    border-radius: 8px;
+}
+input{
+    display: block;
+    padding: 10px;
+    border: none;
+    outline: none;
+    border-radius: 4px;
+    font: inherit;
+}
+label{
+    position: absolute;
+    top: -30px;
+    left: -26px;
+    display: inline-flex;
+    column-gap: 10px;
+    align-items: center;
+    transition: transform .25s, opacity .25s;
+}
+.icon{
+    display: inline-flex;
+    opacity: 0;
+}
+input:focus+label{
+    transform: translateX(26px);
+}
+input:focus+label .icon{
+    opacity: 1;
+    transition-delay: .1s;
+}
+input::placeholder{
+    transition: opacity .25s;
+}
+input:focus::placeholder{
+    opacity: 0;
+}
